@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>
+        SCRAPER WEB APP
+    </title>
+</head>
+<body>
+<h1 center>TECHCRUNCH WEB SCRAPER</h1>
+</hr>
+<form method="POST">
+    <button btn-success>Scrape</button>
+
+</form>
+<table style="width: 100%">
+<thead>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Paragraph</th>
+
+    </tr>
+</thead>
+<tbody>
+ {%if request.method=='POST'%}
+
+    {%for row in data%}
+    <tr>
+        <td>{{row[0]}}</td>
+        <td>{{row[1]}}</td>
+        <td>{{row[2]}}</td>
+    </tr>
+    {% endfor %}
+ {% endif %}
+</tbody>
+</table>
+</body>
+</html>
